@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Actions Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "items"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "actions"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "action_id",
+          "source_signal_id",
+          "related_ot_ids",
+          "product_mapping_id",
+          "gap_ids",
+          "target_product_or_category",
+          "recommended_response",
+          "proposed_action",
+          "rationale",
+          "priority",
+          "build_buy_partner",
+          "pilot_or_productize",
+          "validation_required",
+          "next_step",
+          "expected_outcome",
+          "decision_risks"
+        ],
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_signal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "related_ot_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "product_mapping_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "gap_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "target_product_or_category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recommended_response": {
+            "enum": [
+              "MONITOR",
+              "VALIDATE",
+              "PREPARE",
+              "ACT"
+            ]
+          },
+          "proposed_action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "priority": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH",
+              "CRITICAL"
+            ]
+          },
+          "build_buy_partner": {
+            "enum": [
+              "BUILD",
+              "BUY",
+              "PARTNER",
+              "HYBRID",
+              "UNDECIDED"
+            ]
+          },
+          "pilot_or_productize": {
+            "enum": [
+              "PILOT",
+              "PRODUCTIZE",
+              "BOTH",
+              "NEITHER",
+              "UNDECIDED"
+            ]
+          },
+          "validation_required": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "owner_suggestion": {
+            "deprecated": true,
+            "description": "Legacy compatibility only. New Action artifacts must omit this field.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "next_step": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected_outcome": {
+            "type": "string",
+            "minLength": 1
+          },
+          "decision_risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

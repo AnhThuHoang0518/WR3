@@ -1,0 +1,29 @@
+{
+  "artifact_type": "product_gap",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "items": [
+    {
+      "gap_id": "SYN-GAP-001",
+      "product_mapping_id": "SYN-PM-001",
+      "signal_id": "SYN-SIG-001",
+      "market_product_category": "Synthetic market category",
+      "required_capabilities": [
+        "Synthetic capability"
+      ],
+      "matched_vsf_product": null,
+      "current_vsf_capabilities": [],
+      "capability_status": "NO_MATCH",
+      "missing_capabilities": [
+        "Synthetic capability"
+      ],
+      "gap_type": "UNKNOWN",
+      "gap_severity": "UNKNOWN",
+      "comparison_rationale": "No synthetic portfolio match is asserted.",
+      "portfolio_evidence_refs": [],
+      "validation_needed": [
+        "Human portfolio validation"
+      ]
+    }
+  ]
+}

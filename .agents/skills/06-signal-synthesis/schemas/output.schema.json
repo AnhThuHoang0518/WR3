@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signals Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "items"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "signals"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "signal_id",
+          "signal_title",
+          "signal_statement",
+          "what_changed",
+          "from_state",
+          "to_state",
+          "why_it_matters",
+          "evidence_news_ids",
+          "evidence_types",
+          "evidence_summary",
+          "signal_maturity",
+          "evidence_confidence"
+        ],
+        "properties": {
+          "signal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signal_title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signal_statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "what_changed": {
+            "type": "string",
+            "minLength": 1
+          },
+          "from_state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to_state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_it_matters": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_news_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "evidence_types": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "MARKET",
+                "COMPETITOR",
+                "TECHNOLOGY",
+                "POLICY"
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "evidence_summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signal_maturity": {
+            "enum": [
+              "EMERGING",
+              "DEVELOPING",
+              "ESTABLISHED",
+              "UNKNOWN"
+            ]
+          },
+          "evidence_confidence": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+

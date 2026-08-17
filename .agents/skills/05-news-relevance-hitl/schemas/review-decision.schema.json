@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "News Relevance HITL Decision Manifest",
+  "$comment": "Semantic validation must enforce that reviewed_news_ids equals the disjoint union of all item-decision ID arrays.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_gate",
+    "run_id",
+    "overall_status",
+    "reviewed_news_ids",
+    "kept_news_ids",
+    "excluded_news_ids",
+    "revision_news_ids",
+    "reviewer",
+    "reviewed_at",
+    "reviewer_summary",
+    "synthetic"
+  ],
+  "properties": {
+    "review_gate": {
+      "const": "news-relevance-hitl"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "overall_status": {
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "CHANGES_REQUIRED",
+        "REJECTED"
+      ]
+    },
+    "reviewed_news_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "kept_news_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "excluded_news_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "revision_news_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviewed_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "reviewer_summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "synthetic": {
+      "type": "boolean"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "revision_news_ids": {
+            "minItems": 1
+          }
+        },
+        "required": [
+          "revision_news_ids"
+        ]
+      },
+      "then": {
+        "properties": {
+          "overall_status": {
+            "const": "CHANGES_REQUIRED"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "overall_status": {
+            "const": "CHANGES_REQUIRED"
+          }
+        },
+        "required": [
+          "overall_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "revision_news_ids": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "overall_status": {
+            "const": "APPROVED"
+          }
+        },
+        "required": [
+          "overall_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "revision_news_ids": {
+            "maxItems": 0
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reviewer_summary": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ]
+}

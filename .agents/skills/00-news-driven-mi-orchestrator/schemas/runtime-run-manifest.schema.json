@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WR3 Runtime Run Manifest",
+  "$comment": "Implementation-only runtime schema. It does not replace or modify the frozen Contract V1 pipeline manifest schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runtime_manifest_version",
+    "contract_version",
+    "run_id",
+    "synthetic",
+    "started_at",
+    "completed_at",
+    "run_mode",
+    "current_stage",
+    "pipeline_status",
+    "pipeline_can_continue",
+    "blocking_gate",
+    "blocking_reasons",
+    "stage_statuses",
+    "artifacts",
+    "reviews",
+    "validation_reports",
+    "log_path"
+  ],
+  "properties": {
+    "runtime_manifest_version": {
+      "const": "1.0.0-runtime"
+    },
+    "contract_version": {
+      "const": "1.0.0-contract"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[0-9]{8}-[0-9]{6}-(synthetic|live)$"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "completed_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "run_mode": {
+      "enum": ["PARTIAL", "FULL"]
+    },
+    "current_stage": {
+      "enum": [
+        "MARKET_NEWS",
+        "COMPETITOR_NEWS",
+        "TECHNOLOGY_NEWS",
+        "POLICY_NEWS",
+        "NEWS_RELEVANCE_HITL",
+        "SIGNAL_SYNTHESIS",
+        "OPPORTUNITY_THREAT",
+        "OPPORTUNITY_THREAT_HITL",
+        "PRODUCT_MAPPING",
+        "PRODUCT_GAP",
+        "ACTION_RECOMMENDATION",
+        "PRODUCT_ACTION_HITL",
+        "MI_QUALITY_CONTROL",
+        "COMPLETE"
+      ]
+    },
+    "pipeline_status": {
+      "enum": ["RUNNING", "BLOCKED", "COMPLETED", "FAILED"]
+    },
+    "pipeline_can_continue": {
+      "type": "boolean"
+    },
+    "blocking_gate": {
+      "enum": ["NEWS_RELEVANCE_HITL", "OPPORTUNITY_THREAT_HITL", "PRODUCT_ACTION_HITL", null]
+    },
+    "blocking_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "stage_statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "MARKET_NEWS",
+        "COMPETITOR_NEWS",
+        "TECHNOLOGY_NEWS",
+        "POLICY_NEWS",
+        "NEWS_RELEVANCE_HITL",
+        "SIGNAL_SYNTHESIS",
+        "OPPORTUNITY_THREAT",
+        "OPPORTUNITY_THREAT_HITL",
+        "PRODUCT_MAPPING",
+        "PRODUCT_GAP",
+        "ACTION_RECOMMENDATION",
+        "PRODUCT_ACTION_HITL",
+        "MI_QUALITY_CONTROL"
+      ],
+      "properties": {
+        "MARKET_NEWS": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "COMPETITOR_NEWS": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "TECHNOLOGY_NEWS": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "POLICY_NEWS": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "NEWS_RELEVANCE_HITL": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "SIGNAL_SYNTHESIS": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "OPPORTUNITY_THREAT": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "OPPORTUNITY_THREAT_HITL": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "PRODUCT_MAPPING": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "PRODUCT_GAP": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "ACTION_RECOMMENDATION": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "PRODUCT_ACTION_HITL": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]},
+        "MI_QUALITY_CONTROL": {"enum": ["NOT_STARTED", "RUNNING", "COMPLETED", "BLOCKED", "FAILED", "NOT_IN_SCOPE"]}
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "market_news": {"type": "string", "minLength": 1},
+        "raw_news_input": {"type": "string", "minLength": 1},
+        "competitor_news": {"type": "string", "minLength": 1},
+        "technology_news": {"type": "string", "minLength": 1},
+        "policy_news": {"type": "string", "minLength": 1},
+        "news_lineage": {"type": "string", "minLength": 1},
+        "approved_news_bundle": {"type": "string", "minLength": 1},
+        "signals": {"type": "string", "minLength": 1},
+        "opportunity_threat": {"type": "string", "minLength": 1},
+        "approved_opportunity_threat_bundle": {"type": "string", "minLength": 1},
+        "product_mapping": {"type": "string", "minLength": 1},
+        "product_gap": {"type": "string", "minLength": 1},
+        "actions": {"type": "string", "minLength": 1},
+        "action_summary": {"type": "string", "minLength": 1},
+        "approved_actions": {"type": "string", "minLength": 1},
+        "deferred_actions": {"type": "string", "minLength": 1},
+        "quality_control_report": {"type": "string", "minLength": 1},
+        "quality_control_summary": {"type": "string", "minLength": 1}
+      }
+    },
+    "reviews": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "news_relevance_review": {"type": "string", "minLength": 1},
+        "news_relevance_decision": {"type": "string", "minLength": 1},
+        "opportunity_threat_review": {"type": "string", "minLength": 1},
+        "opportunity_threat_decision": {"type": "string", "minLength": 1},
+        "product_mapping_manual_review": {"type": "string", "minLength": 1},
+        "product_gap_manual_review": {"type": "string", "minLength": 1},
+        "product_action_review": {"type": "string", "minLength": 1},
+        "product_action_decision": {"type": "string", "minLength": 1}
+      }
+    },
+    "validation_reports": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "news_validation": {"type": "string", "minLength": 1},
+        "news_lineage_validation": {"type": "string", "minLength": 1},
+        "approved_news_validation": {"type": "string", "minLength": 1},
+        "signal_validation": {"type": "string", "minLength": 1},
+        "signal_coverage": {"type": "string", "minLength": 1},
+        "opportunity_threat_validation": {"type": "string", "minLength": 1},
+        "opportunity_threat_coverage": {"type": "string", "minLength": 1},
+        "gate_1_validation": {"type": "string", "minLength": 1},
+        "runtime_manifest_validation": {"type": "string", "minLength": 1},
+        "gate_2_validation": {"type": "string", "minLength": 1},
+        "approved_ot_validation": {"type": "string", "minLength": 1},
+        "product_mapping_validation": {"type": "string", "minLength": 1},
+        "product_mapping_coverage": {"type": "string", "minLength": 1},
+        "product_mapping_dependency_audit": {"type": "string", "minLength": 1},
+        "product_gap_validation": {"type": "string", "minLength": 1},
+        "product_gap_lineage_validation": {"type": "string", "minLength": 1},
+        "product_gap_portfolio_evidence": {"type": "string", "minLength": 1},
+        "product_gap_coverage": {"type": "string", "minLength": 1},
+        "action_validation": {"type": "string", "minLength": 1},
+        "action_lineage": {"type": "string", "minLength": 1},
+        "action_coverage": {"type": "string", "minLength": 1},
+        "gate_3_validation": {"type": "string", "minLength": 1},
+        "final_artifact_integrity": {"type": "string", "minLength": 1},
+        "quality_control_validation": {"type": "string", "minLength": 1}
+      }
+    },
+    "log_path": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"pipeline_status": {"const": "BLOCKED"}},
+        "required": ["pipeline_status"]
+      },
+      "then": {
+        "properties": {
+          "pipeline_can_continue": {"const": false},
+          "blocking_gate": {"type": "string"},
+          "blocking_reasons": {"minItems": 1}
+        }
+      }
+    }
+  ]
+}

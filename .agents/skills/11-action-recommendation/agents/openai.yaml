@@ -1,0 +1,4 @@
+interface:
+  display_name: "Action Recommendation"
+  short_description: "Create traceable actions for human review"
+  default_prompt: "Use $action-recommendation to turn approved findings and reviewed gaps into specific action proposals, then stop at Gate 3."

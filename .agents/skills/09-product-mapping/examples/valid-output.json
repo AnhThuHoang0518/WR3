@@ -1,0 +1,30 @@
+{
+  "artifact_type": "product_mapping",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "items": [
+    {
+      "product_mapping_id": "SYN-PM-001",
+      "signal_id": "SYN-SIG-001",
+      "related_ot_ids": [
+        "SYN-OT-001"
+      ],
+      "market_problem": "Synthetic market problem.",
+      "market_product_category": "Synthetic market category",
+      "product_or_solution_type": "Synthetic solution type",
+      "required_capabilities": [
+        "Synthetic capability"
+      ],
+      "target_buyers": [
+        "Synthetic buyer"
+      ],
+      "deployment_context": "Synthetic deployment context.",
+      "fit_rationale": "Synthetic outside-in rationale.",
+      "external_market_examples": [],
+      "evidence_or_validation_needed": [
+        "Synthetic validation need"
+      ]
+    }
+  ]
+}
+

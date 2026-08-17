@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML to Editable PowerPoint"
+  short_description: "Convert HTML to validated editable PPTX"
+  default_prompt: "Use $html-to-editable-pptx to convert this approved HTML deck into an editable PowerPoint, preserve placeholders and hyperlinks, embed custom fonts when possible, and only deliver a deck that passes the hard visual quality gate."

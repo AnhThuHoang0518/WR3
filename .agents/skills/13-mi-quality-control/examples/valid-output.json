@@ -1,0 +1,23 @@
+{
+  "artifact_type": "quality_control_report",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "summary": {
+    "overall_status": "PASS",
+    "error_count": 0,
+    "warning_count": 0,
+    "passed_count": 1,
+    "pipeline_eligible_for_release": true
+  },
+  "checks": [
+    {
+      "check_id": "SYN-QC-001",
+      "check_name": "Synthetic contract validation",
+      "status": "PASS",
+      "severity": "INFO",
+      "affected_ids": [],
+      "message": "Synthetic validation passed; this is not a runtime intelligence result.",
+      "remediation": null
+    }
+  ]
+}

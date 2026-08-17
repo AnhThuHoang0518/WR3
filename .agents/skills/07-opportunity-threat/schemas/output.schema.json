@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Opportunity Threat Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "items"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "opportunity_threat"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ot_id",
+          "signal_id",
+          "type",
+          "statement",
+          "impacted_stakeholders",
+          "impact_mechanism",
+          "importance",
+          "rationale",
+          "assumptions",
+          "evidence_gaps"
+        ],
+        "properties": {
+          "ot_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "OPPORTUNITY",
+              "THREAT"
+            ]
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impacted_stakeholders": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "impact_mechanism": {
+            "type": "string",
+            "minLength": 1
+          },
+          "importance": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH",
+              "CRITICAL"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_gaps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

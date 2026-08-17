@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WR3 Raw-to-Canonical News Lineage Sidecar",
+  "$comment": "Implementation sidecar only. Canonical News schemas and Contract V1 lineage remain unchanged.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "synthetic", "mapping_count", "mappings"],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "pattern": "^[0-9]{8}-[0-9]{6}-(synthetic|live)$"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "mapping_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mappings": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["raw_news_id", "news_id", "news_type", "artifact_path", "input_position"],
+        "properties": {
+          "raw_news_id": {"type": "string", "minLength": 1},
+          "news_id": {"type": "string", "pattern": "^NEWS-(MARKET|COMPETITOR|TECHNOLOGY|POLICY)-[0-9]{3}$"},
+          "news_type": {"enum": ["MARKET", "COMPETITOR", "TECHNOLOGY", "POLICY"]},
+          "artifact_path": {"type": "string", "minLength": 1},
+          "input_position": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}

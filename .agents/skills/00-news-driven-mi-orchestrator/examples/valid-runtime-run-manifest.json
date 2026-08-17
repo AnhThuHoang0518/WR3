@@ -1,0 +1,47 @@
+{
+  "runtime_manifest_version": "1.0.0-runtime",
+  "contract_version": "1.0.0-contract",
+  "run_id": "20260809-000000-synthetic",
+  "synthetic": true,
+  "started_at": "2026-08-09T00:00:00Z",
+  "completed_at": "2026-08-09T00:00:05Z",
+  "run_mode": "PARTIAL",
+  "current_stage": "NEWS_RELEVANCE_HITL",
+  "pipeline_status": "BLOCKED",
+  "pipeline_can_continue": false,
+  "blocking_gate": "NEWS_RELEVANCE_HITL",
+  "blocking_reasons": ["HUMAN_REVIEW_PENDING"],
+  "stage_statuses": {
+    "MARKET_NEWS": "COMPLETED",
+    "COMPETITOR_NEWS": "COMPLETED",
+    "TECHNOLOGY_NEWS": "COMPLETED",
+    "POLICY_NEWS": "COMPLETED",
+    "NEWS_RELEVANCE_HITL": "BLOCKED",
+    "SIGNAL_SYNTHESIS": "NOT_IN_SCOPE",
+    "OPPORTUNITY_THREAT": "NOT_IN_SCOPE",
+    "OPPORTUNITY_THREAT_HITL": "NOT_IN_SCOPE",
+    "PRODUCT_MAPPING": "NOT_IN_SCOPE",
+    "PRODUCT_GAP": "NOT_IN_SCOPE",
+    "ACTION_RECOMMENDATION": "NOT_IN_SCOPE",
+    "PRODUCT_ACTION_HITL": "NOT_IN_SCOPE",
+    "MI_QUALITY_CONTROL": "NOT_IN_SCOPE"
+  },
+  "artifacts": {
+    "market_news": "workspace/runs/20260809-000000-synthetic/artifacts/market_news.json",
+    "competitor_news": "workspace/runs/20260809-000000-synthetic/artifacts/competitor_news.json",
+    "technology_news": "workspace/runs/20260809-000000-synthetic/artifacts/technology_news.json",
+    "policy_news": "workspace/runs/20260809-000000-synthetic/artifacts/policy_news.json",
+    "news_lineage": "workspace/runs/20260809-000000-synthetic/validation/news-lineage.json"
+  },
+  "reviews": {
+    "news_relevance_review": "workspace/runs/20260809-000000-synthetic/reviews/01-news-relevance-review.md",
+    "news_relevance_decision": "workspace/runs/20260809-000000-synthetic/reviews/01-news-relevance-decision.json"
+  },
+  "validation_reports": {
+    "news_validation": "workspace/runs/20260809-000000-synthetic/validation/news-validation-report.json",
+    "news_lineage_validation": "workspace/runs/20260809-000000-synthetic/validation/news-lineage-validation-report.json",
+    "gate_1_validation": "workspace/runs/20260809-000000-synthetic/validation/gate-1-validation-report.json",
+    "runtime_manifest_validation": "workspace/runs/20260809-000000-synthetic/validation/runtime-manifest-validation-report.json"
+  },
+  "log_path": "workspace/logs/20260809-000000-synthetic.log"
+}

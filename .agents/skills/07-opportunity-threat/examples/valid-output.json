@@ -1,0 +1,26 @@
+{
+  "artifact_type": "opportunity_threat",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "items": [
+    {
+      "ot_id": "SYN-OT-001",
+      "signal_id": "SYN-SIG-001",
+      "type": "OPPORTUNITY",
+      "statement": "Synthetic opportunity statement.",
+      "impacted_stakeholders": [
+        "Synthetic buyer"
+      ],
+      "impact_mechanism": "Synthetic impact mechanism.",
+      "importance": "MEDIUM",
+      "rationale": "Synthetic rationale.",
+      "assumptions": [
+        "Synthetic assumption"
+      ],
+      "evidence_gaps": [
+        "Synthetic evidence gap"
+      ]
+    }
+  ]
+}
+

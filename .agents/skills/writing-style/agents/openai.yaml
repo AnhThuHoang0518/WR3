@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vietnamese Writing Style"
+  short_description: "Polish Vietnamese business writing naturally"
+  default_prompt: "Use $writing-style to polish this Vietnamese Market Intelligence Markdown while preserving its meaning and structure."

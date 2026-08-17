@@ -1,0 +1,620 @@
+{
+  "schema_version": "1.0",
+  "dataset_name": "VSF Smart City Competitors",
+  "crawl_schedule": "WEEKLY",
+  "competitor_count": 31,
+  "post_crawl_filter": {
+    "required_conditions": [
+      "competitor_match"
+    ],
+    "keep_when": [
+      "bài có thông tin liên quan đến hoạt động, dự án, sản phẩm, công nghệ, hợp tác, đầu tư, vận hành hoặc định vị của đối thủ",
+      "bài về dự án Smart City",
+      "bài về dự án bất động sản thông thường",
+      "bài quảng cáo, mở bán, giới thiệu dự án hoặc truyền thông thương hiệu của đối thủ",
+      "bài về xây dựng, hạ tầng, khu công nghiệp, đô thị, công nghệ hoặc dịch vụ liên quan đến đối thủ"
+    ],
+    "reject_when": [
+      "chỉ là tin tuyển dụng",
+      "chỉ là biến động cổ phiếu, mã chứng khoán hoặc kết quả giao dịch",
+      "chỉ nhắc tên đối thủ nhưng nội dung thực tế không liên quan đến doanh nghiệp",
+      "bài trùng lặp hoặc không có nội dung hữu ích"
+    ],
+    "output_labels": [
+      "RELEVANT",
+      "IRRELEVANT",
+      "NEEDS_REVIEW"
+    ]
+  },
+  "competitors": [
+    {
+      "competitor_id": "SC-001",
+      "active": true,
+      "name": "Becamex IDC",
+      "aliases": [
+        "Tổng Công ty Đầu tư và Phát triển Công nghiệp - CTCP",
+        "Becamex IDC",
+        "Becamex Group",
+        "Tổng Công ty Becamex IDC",
+        "Becamex Smart City"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://becamex.com.vn/",
+      "facebook": {
+        "page_name": "Becamex IDC",
+        "handle": "BecamexIDCVietnam",
+        "url": "https://www.facebook.com/BecamexIDCVietnam/"
+      }
+    },
+    {
+      "competitor_id": "SC-002",
+      "active": true,
+      "name": "Ecopark Group",
+      "aliases": [
+        "Công ty Cổ phần Tập đoàn Ecopark",
+        "Ecopark",
+        "Ecopark Group",
+        "Tập đoàn Ecopark",
+        "Ecotek",
+        "Ecopark Smart City"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://ecopark.com.vn/",
+      "facebook": {
+        "page_name": "Ecopark",
+        "handle": "ecopark.com.vn",
+        "url": "https://www.facebook.com/ecopark.com.vn/"
+      }
+    },
+    {
+      "competitor_id": "SC-003",
+      "active": true,
+      "name": "BRG Group",
+      "aliases": [
+        "BRG Group",
+        "Tập đoàn BRG",
+        "North Hanoi Smart City",
+        "Thành phố thông minh Bắc Hà Nội"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://www.brggroup.vn/",
+      "facebook": {
+        "page_name": "BRG Group",
+        "handle": "brggroup.vn",
+        "url": "https://www.facebook.com/brggroup.vn/"
+      }
+    },
+    {
+      "competitor_id": "SC-004",
+      "active": true,
+      "name": "Keppel Real Estate Vietnam",
+      "aliases": [
+        "Keppel Ltd. – Real Estate Division Vietnam",
+        "Keppel",
+        "Keppel Land Vietnam",
+        "Keppel Real Estate Vietnam",
+        "Saigon Sports City",
+        "Keppel Urban Solutions"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://www.keppel.com/realestate/vn/en",
+      "facebook": {
+        "page_name": "Keppel (Real Estate Division – Vietnam)",
+        "handle": "keppelrediv.vn",
+        "url": "https://www.facebook.com/keppelrediv.vn/"
+      }
+    },
+    {
+      "competitor_id": "SC-005",
+      "active": true,
+      "name": "Sunshine Group",
+      "aliases": [
+        "Sunshine Group",
+        "Tập đoàn Sunshine",
+        "Sunshine Smart City",
+        "Sunshine Tech"
+      ],
+      "group": "Chủ đầu tư / Xây dựng / Công nghệ",
+      "website_url": "https://sunshinegroup.vn/",
+      "facebook": {
+        "page_name": "Sunshine Group",
+        "handle": "TapdoanSunshine",
+        "url": "https://www.facebook.com/TapdoanSunshine/"
+      }
+    },
+    {
+      "competitor_id": "SC-006",
+      "active": true,
+      "name": "VSIP Vietnam",
+      "aliases": [
+        "Vietnam Singapore Industrial Park Joint Venture",
+        "VSIP",
+        "VSIP Vietnam",
+        "Vietnam Singapore Industrial Park",
+        "VSIP Smart City",
+        "VSIP smart industrial park"
+      ],
+      "group": "Phát triển khu công nghiệp – đô thị",
+      "website_url": "https://www.vsip.com.vn/",
+      "facebook": {
+        "page_name": "VSIP Vietnam",
+        "handle": "vsipvietnam.official",
+        "url": "https://www.facebook.com/vsipvietnam.official/"
+      }
+    },
+    {
+      "competitor_id": "SC-007",
+      "active": true,
+      "name": "Viglacera",
+      "aliases": [
+        "Tổng Công ty Viglacera - CTCP",
+        "Viglacera",
+        "Tổng Công ty Viglacera",
+        "Viglacera IOC",
+        "Viglacera smart industrial park"
+      ],
+      "group": "Phát triển khu công nghiệp – đô thị",
+      "website_url": "https://www.viglacera.com.vn/",
+      "facebook": {
+        "page_name": "Viglacera Corporation",
+        "handle": "viglacera.official",
+        "url": "https://www.facebook.com/viglacera.official/"
+      }
+    },
+    {
+      "competitor_id": "SC-008",
+      "active": true,
+      "name": "DEEP C",
+      "aliases": [
+        "DEEP C",
+        "DEEP C Industrial Zones",
+        "DEEP C smart industrial",
+        "DEEP C eco-industrial"
+      ],
+      "group": "Phát triển khu công nghiệp – đô thị",
+      "website_url": "https://www.deepc.vn/",
+      "facebook": {
+        "page_name": "DEEP C Industrial Zones",
+        "handle": "deepcindustrialzones",
+        "url": "https://www.facebook.com/deepcindustrialzones/"
+      }
+    },
+    {
+      "competitor_id": "SC-009",
+      "active": true,
+      "name": "Becamex Tokyu",
+      "aliases": [
+        "Becamex Tokyu Co., Ltd.",
+        "Becamex Tokyu",
+        "TOKYU Garden City",
+        "Binh Duong New City",
+        "Thành phố mới Bình Dương"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://tokyugardencity.com/",
+      "facebook": {
+        "page_name": "TOKYU Garden City",
+        "handle": "TOKYUGardenCity",
+        "url": "https://www.facebook.com/TOKYUGardenCity/"
+      }
+    },
+    {
+      "competitor_id": "SC-010",
+      "active": true,
+      "name": "Gamuda Land Vietnam",
+      "aliases": [
+        "Gamuda Land Vietnam",
+        "Gamuda Land",
+        "Gamuda City",
+        "Celadon City"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://gamudalandvn.vn/",
+      "facebook": {
+        "page_name": "Gamuda Land Vietnam",
+        "handle": "gamudalandvn",
+        "url": "https://www.facebook.com/gamudalandvn/"
+      }
+    },
+    {
+      "competitor_id": "SC-011",
+      "active": true,
+      "name": "CapitaLand Vietnam",
+      "aliases": [
+        "CapitaLand Vietnam",
+        "CapitaLand Development Vietnam",
+        "Sycamore Binh Duong",
+        "The Orchard"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://www.capitaland.com/vn/en.html",
+      "facebook": {
+        "page_name": "CapitaLand Vietnam",
+        "handle": "CapitaLandVietnam",
+        "url": "https://www.facebook.com/CapitaLandVietnam/"
+      }
+    },
+    {
+      "competitor_id": "SC-012",
+      "active": true,
+      "name": "Nam Long Group",
+      "aliases": [
+        "Công ty Cổ phần Đầu tư Nam Long",
+        "Nam Long Group",
+        "Nam Long Investment",
+        "Waterpoint",
+        "Mizuki Park",
+        "Akari City"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://namlonggroup.vn/",
+      "facebook": {
+        "page_name": "Nam Long Group",
+        "handle": "namlonggroup.nlg",
+        "url": "https://www.facebook.com/namlonggroup.nlg/"
+      }
+    },
+    {
+      "competitor_id": "SC-013",
+      "active": true,
+      "name": "Novaland Group",
+      "aliases": [
+        "Công ty Cổ phần Tập đoàn Đầu tư Địa ốc No Va",
+        "Novaland",
+        "Novaland Group",
+        "Aqua City",
+        "NovaWorld",
+        "đô thị sinh thái thông minh"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://www.novaland.com.vn/",
+      "facebook": {
+        "page_name": "Novaland",
+        "handle": "novaland.jsc",
+        "url": "https://www.facebook.com/novaland.jsc/"
+      }
+    },
+    {
+      "competitor_id": "SC-014",
+      "active": true,
+      "name": "Van Phuc Group",
+      "aliases": [
+        "Van Phuc Group",
+        "Tập đoàn Vạn Phúc",
+        "Van Phuc City",
+        "Khu đô thị Vạn Phúc"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://khudothivanphuc.com/",
+      "facebook": {
+        "page_name": "Van Phuc City",
+        "handle": "VanPhucCity.Offical",
+        "url": "https://www.facebook.com/VanPhucCity.Offical/"
+      }
+    },
+    {
+      "competitor_id": "SC-015",
+      "active": true,
+      "name": "ROX Group",
+      "aliases": [
+        "ROX Group",
+        "ROX Living",
+        "ROX iPark",
+        "TNG Holdings Vietnam"
+      ],
+      "group": "Chủ đầu tư / Phát triển đô thị",
+      "website_url": "https://rox.vn/",
+      "facebook": {
+        "page_name": "ROX Group",
+        "handle": "roxgroupvn",
+        "url": "https://www.facebook.com/roxgroupvn/"
+      }
+    },
+    {
+      "competitor_id": "SC-016",
+      "active": true,
+      "name": "Coteccons",
+      "aliases": [
+        "Công ty Cổ phần Xây dựng Coteccons",
+        "Coteccons",
+        "Coteccons Construction",
+        "Coteccons Smart City",
+        "Coteccons Vinhomes Smart City"
+      ],
+      "group": "Nhà thầu xây dựng",
+      "website_url": "https://www.coteccons.vn/",
+      "facebook": {
+        "page_name": "Coteccons",
+        "handle": "CotecconsJSC",
+        "url": "https://www.facebook.com/CotecconsJSC/"
+      }
+    },
+    {
+      "competitor_id": "SC-017",
+      "active": true,
+      "name": "Hoa Binh Construction Group",
+      "aliases": [
+        "Công ty Cổ phần Tập đoàn Xây dựng Hòa Bình",
+        "Hoa Binh Construction Group",
+        "Hòa Bình Construction",
+        "Tập đoàn Xây dựng Hòa Bình",
+        "HBC"
+      ],
+      "group": "Nhà thầu xây dựng",
+      "website_url": "https://hbcg.vn/",
+      "facebook": {
+        "page_name": "Hoa Binh Construction Group",
+        "handle": "hoabinhconstruction",
+        "url": "https://www.facebook.com/hoabinhconstruction/"
+      }
+    },
+    {
+      "competitor_id": "SC-018",
+      "active": true,
+      "name": "FECON",
+      "aliases": [
+        "Công ty Cổ phần FECON",
+        "FECON",
+        "FECON Corporation",
+        "FECON Urban Infrastructure",
+        "FECON TOD"
+      ],
+      "group": "Hạ tầng / Xây dựng",
+      "website_url": "https://fecon.com.vn/",
+      "facebook": {
+        "page_name": "FECON Corporation",
+        "handle": "FECONCorp",
+        "url": "https://www.facebook.com/FECONCorp/"
+      }
+    },
+    {
+      "competitor_id": "SC-019",
+      "active": true,
+      "name": "Viettel Solutions",
+      "aliases": [
+        "Viettel Solutions",
+        "Tổng Công ty Giải pháp Doanh nghiệp Viettel",
+        "Viettel Smart City",
+        "Viettel IOC"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://solutions.viettel.vn/",
+      "facebook": {
+        "page_name": "Viettel Solutions",
+        "handle": "ViettelBusinessSolutionsCorporation",
+        "url": "https://www.facebook.com/ViettelBusinessSolutionsCorporation/"
+      }
+    },
+    {
+      "competitor_id": "SC-020",
+      "active": true,
+      "name": "VNPT-IT",
+      "aliases": [
+        "Công ty Công nghệ Thông tin VNPT",
+        "VNPT-IT",
+        "VNPT Information Technology",
+        "VNPT Smart City",
+        "VNPT IOC"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://vnptit.vn/",
+      "facebook": {
+        "page_name": "VNPT Information Technology Company",
+        "handle": "VNPTITCOMPANY",
+        "url": "https://www.facebook.com/VNPTITCOMPANY/"
+      }
+    },
+    {
+      "competitor_id": "SC-021",
+      "active": true,
+      "name": "FPT IS",
+      "aliases": [
+        "Công ty TNHH Hệ thống Thông tin FPT",
+        "FPT IS",
+        "FPT Information System",
+        "Công ty Hệ thống Thông tin FPT",
+        "FPT Smart City",
+        "FPT IOC"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://fpt-is.com/",
+      "facebook": {
+        "page_name": "FPT IS",
+        "handle": "FPTIS.Ltd",
+        "url": "https://www.facebook.com/FPTIS.Ltd/"
+      }
+    },
+    {
+      "competitor_id": "SC-022",
+      "active": true,
+      "name": "CMC / CMC TS",
+      "aliases": [
+        "CMC / CMC TS",
+        "Tập đoàn Công nghệ CMC / CMC Technology & Solution",
+        "CMC Corporation",
+        "Tập đoàn Công nghệ CMC",
+        "CMC TS",
+        "CMC Technology & Solution",
+        "CMC Smart City"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://www.cmc.com.vn/",
+      "facebook": {
+        "page_name": "CMC",
+        "handle": "cmccorporation",
+        "url": "https://www.facebook.com/cmccorporation/"
+      }
+    },
+    {
+      "competitor_id": "SC-023",
+      "active": true,
+      "name": "ELCOM",
+      "aliases": [
+        "ELCOM",
+        "Công ty Cổ phần Công nghệ - Viễn thông ELCOM",
+        "ELCOM Corporation",
+        "ELCOM Smart City",
+        "ELCOM ITS",
+        "Công ty Công nghệ Viễn thông ELCOM"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://elcom.com.vn/",
+      "facebook": {
+        "page_name": "ELCOM Corporation",
+        "handle": "ElcomCorporationVN",
+        "url": "https://www.facebook.com/ElcomCorporationVN/"
+      }
+    },
+    {
+      "competitor_id": "SC-024",
+      "active": true,
+      "name": "Bkav",
+      "aliases": [
+        "Tập đoàn Công nghệ Bkav",
+        "Bkav",
+        "Bkav Corporation",
+        "Bkav AI City",
+        "Bkav Smart City",
+        "Bkav SmartHome"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://www.bkav.com/",
+      "facebook": {
+        "page_name": "Bkav",
+        "handle": "BkavCorp",
+        "url": "https://www.facebook.com/BkavCorp/"
+      }
+    },
+    {
+      "competitor_id": "SC-025",
+      "active": true,
+      "name": "SAVIS",
+      "aliases": [
+        "SAVIS",
+        "SAVIS Group",
+        "SAVIS Smart City",
+        "nền tảng giám sát đô thị SAVIS"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://savis.vn/",
+      "facebook": {
+        "page_name": "SAVIS GROUP",
+        "handle": "savisgroup1",
+        "url": "https://www.facebook.com/savisgroup1/"
+      }
+    },
+    {
+      "competitor_id": "SC-026",
+      "active": true,
+      "name": "MK Vision",
+      "aliases": [
+        "MK Vision",
+        "MKVision",
+        "MK Group AI Camera",
+        "MK Smart City"
+      ],
+      "group": "Công nghệ / Giải pháp",
+      "website_url": "https://mkvision.com/",
+      "facebook": {
+        "page_name": "MK Vision",
+        "handle": "MKVisionVN",
+        "url": "https://www.facebook.com/MKVisionVN/"
+      }
+    },
+    {
+      "competitor_id": "SC-027",
+      "active": true,
+      "name": "Huawei",
+      "aliases": [
+        "Huawei Technologies",
+        "Huawei",
+        "Huawei Enterprise",
+        "Huawei Smart City",
+        "Huawei Intelligent City",
+        "Huawei IOC"
+      ],
+      "group": "Công nghệ / Giải pháp quốc tế",
+      "website_url": "https://www.huawei.com/",
+      "facebook": {
+        "page_name": "Huawei",
+        "handle": "huawei",
+        "url": "https://www.facebook.com/huawei/"
+      }
+    },
+    {
+      "competitor_id": "SC-028",
+      "active": true,
+      "name": "Siemens",
+      "aliases": [
+        "Siemens AG",
+        "Siemens",
+        "Siemens Smart Infrastructure",
+        "Siemens Smart City",
+        "Siemens Urban Platform"
+      ],
+      "group": "Công nghệ / Hạ tầng quốc tế",
+      "website_url": "https://www.siemens.com/",
+      "facebook": {
+        "page_name": "Siemens",
+        "handle": "Siemens",
+        "url": "https://www.facebook.com/Siemens/"
+      }
+    },
+    {
+      "competitor_id": "SC-029",
+      "active": true,
+      "name": "Schneider Electric",
+      "aliases": [
+        "Schneider Electric",
+        "Schneider Smart City",
+        "EcoStruxure for Cities",
+        "EcoStruxure Building"
+      ],
+      "group": "Công nghệ / Hạ tầng quốc tế",
+      "website_url": "https://www.se.com/",
+      "facebook": {
+        "page_name": "Schneider Electric",
+        "handle": "SchneiderElectric",
+        "url": "https://www.facebook.com/SchneiderElectric/"
+      }
+    },
+    {
+      "competitor_id": "SC-030",
+      "active": true,
+      "name": "Hikvision",
+      "aliases": [
+        "Hangzhou Hikvision Digital Technology Co., Ltd.",
+        "Hikvision",
+        "Hikvision Smart City",
+        "Hikvision AIoT",
+        "Hikvision Traffic"
+      ],
+      "group": "Công nghệ / Giải pháp quốc tế",
+      "website_url": "https://www.hikvision.com/",
+      "facebook": {
+        "page_name": "Hikvision",
+        "handle": "HikvisionHQ",
+        "url": "https://www.facebook.com/HikvisionHQ/"
+      }
+    },
+    {
+      "competitor_id": "SC-031",
+      "active": true,
+      "name": "Dahua Technology",
+      "aliases": [
+        "Zhejiang Dahua Technology Co., Ltd.",
+        "Dahua Technology",
+        "Dahua Smart City",
+        "Dahua AIoT",
+        "Dahua Traffic"
+      ],
+      "group": "Công nghệ / Giải pháp quốc tế",
+      "website_url": "https://www.dahuasecurity.com/",
+      "facebook": {
+        "page_name": "Dahua Technology",
+        "handle": "DahuaHQ",
+        "url": "https://www.facebook.com/DahuaHQ/"
+      }
+    }
+  ]
+}

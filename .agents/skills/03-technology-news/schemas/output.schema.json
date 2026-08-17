@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Technology News Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "items"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "technology_news"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "news_id",
+          "news_type",
+          "title",
+          "source_name",
+          "source_url",
+          "published_at",
+          "collected_at",
+          "geography",
+          "language",
+          "summary",
+          "key_facts",
+          "entities",
+          "relevance_rationale",
+          "evidence_quality",
+          "content_status"
+        ],
+        "properties": {
+          "news_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "news_type": {
+            "const": "TECHNOLOGY"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "collected_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "geography": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]+)*$"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "key_facts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "entities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "relevance_rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_quality": {
+            "enum": [
+              "HIGH",
+              "MEDIUM",
+              "LOW",
+              "UNKNOWN"
+            ]
+          },
+          "content_status": {
+            "enum": [
+              "FULL_TEXT",
+              "PARTIAL_TEXT",
+              "METADATA_ONLY",
+              "UNAVAILABLE"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

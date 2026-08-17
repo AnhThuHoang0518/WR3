@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quality Control Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "summary",
+    "checks"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "quality_control_report"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "overall_status",
+        "error_count",
+        "warning_count",
+        "passed_count",
+        "pipeline_eligible_for_release"
+      ],
+      "properties": {
+        "overall_status": {
+          "enum": [
+            "ERROR",
+            "WARNING",
+            "PASS"
+          ]
+        },
+        "error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "warning_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "passed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pipeline_eligible_for_release": {
+          "type": "boolean"
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "check_id",
+          "check_name",
+          "status",
+          "severity",
+          "affected_ids",
+          "message",
+          "remediation"
+        ],
+        "properties": {
+          "check_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "check_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "ERROR",
+              "WARNING",
+              "PASS"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "CRITICAL",
+              "HIGH",
+              "MEDIUM",
+              "LOW",
+              "INFO"
+            ]
+          },
+          "affected_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "remediation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

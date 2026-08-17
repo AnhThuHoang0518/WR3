@@ -1,0 +1,14 @@
+{
+  "review_gate": "news-relevance-hitl",
+  "run_id": "SYN-RUN-001",
+  "overall_status": "PENDING",
+  "reviewed_news_ids": [],
+  "kept_news_ids": [],
+  "excluded_news_ids": [],
+  "revision_news_ids": [],
+  "reviewer": null,
+  "reviewed_at": null,
+  "reviewer_summary": null,
+  "synthetic": true
+}
+

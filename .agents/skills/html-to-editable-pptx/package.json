@@ -1,0 +1,24 @@
+{
+  "name": "html-to-editable-pptx-skill",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chromium-measured HTML slide deck to editable PowerPoint converter",
+  "bin": {
+    "html2ppt": "./bin/html2ppt.js"
+  },
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.js",
+    "test:fixture": "node ./bin/html2ppt.js ./examples/08-complex-layout.html --output ./test-output/fixture.pptx --debug --strict"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "pixelmatch": "^7.1.0",
+    "playwright-core": "^1.55.0",
+    "pngjs": "^7.0.0",
+    "pptxgenjs": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

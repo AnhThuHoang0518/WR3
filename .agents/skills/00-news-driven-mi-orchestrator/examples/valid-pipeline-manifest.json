@@ -1,0 +1,12 @@
+{
+  "contract_version": "1.0.0-contract",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "current_stage": "05-news-relevance-hitl",
+  "pipeline_status": "BLOCKED",
+  "gates": {
+    "news_relevance": "PENDING",
+    "opportunity_threat": "PENDING",
+    "product_action": "PENDING"
+  }
+}

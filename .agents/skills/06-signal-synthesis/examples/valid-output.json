@@ -1,0 +1,26 @@
+{
+  "artifact_type": "signals",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "items": [
+    {
+      "signal_id": "SYN-SIG-001",
+      "signal_title": "Synthetic signal",
+      "signal_statement": "A synthetic market transition is observed.",
+      "what_changed": "Synthetic condition changed.",
+      "from_state": "Synthetic prior state.",
+      "to_state": "Synthetic future state.",
+      "why_it_matters": "Used only to validate the contract.",
+      "evidence_news_ids": [
+        "SYN-NEWS-M-001"
+      ],
+      "evidence_types": [
+        "MARKET"
+      ],
+      "evidence_summary": "Synthetic evidence summary.",
+      "signal_maturity": "EMERGING",
+      "evidence_confidence": "LOW"
+    }
+  ]
+}
+

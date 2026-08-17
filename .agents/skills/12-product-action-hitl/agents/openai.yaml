@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Action HITL"
+  short_description: "Review and decide proposed product actions"
+  default_prompt: "Use $product-action-hitl to generate a PENDING Gate 3 review for every proposed action without auto-approval."

@@ -1,0 +1,557 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_name": "VSF Smart City Product Master",
+  "generated_on": "2026-08-10",
+  "source_file": "VSF_Smart_City_News_Crawl_2026-08-01_to_2026-08-07.xlsx",
+  "source_sheet": "Portfolio_Reference",
+  "product_count": 15,
+  "usage": {
+    "pipeline": "News → Opportunity/Threat → Related Product → Current Capability → Gap → Product Action",
+    "mapping_rule": "News may map to any active_for_news_mapping product when evidence supports the relationship.",
+    "gap_baseline_rule": "Only products with allowed_gap_baseline=true may be treated as confirmed current VSF capability baselines without additional human validation.",
+    "ecosystem_rule": "Capabilities of Vingroup ecosystem products or enabling technologies must not be inherited by Core VSF products automatically.",
+    "historical_rule": "Historical references provide context only and must not be treated as current products or capabilities.",
+    "unknown_rule": "Do not convert known_unknowns into confirmed facts. Output TO_VERIFY when a decision depends on them."
+  },
+  "portfolio_role_definitions": {
+    "CORE_VSF_PRODUCT": "Direct VSF product and valid baseline for product gap analysis.",
+    "CORE_VSF_MODULE": "Direct VSF module and valid baseline for product gap analysis.",
+    "VINGROUP_ECOSYSTEM_PRODUCT": "Relevant product in the broader Vingroup ecosystem; map news where relevant but validate ownership and integration before using as VSF baseline.",
+    "VINGROUP_ENABLING_TECHNOLOGY": "Technology that may enable or supply a VSF product; do not treat as an end-user VSF product or automatically transfer capabilities.",
+    "LEGACY_ECOSYSTEM_PRODUCT": "Legacy product whose current commercial status and integration require validation.",
+    "HISTORICAL_REFERENCE": "Historical umbrella portfolio used only for context."
+  },
+  "products": [
+    {
+      "product_code": "VUYEN-ACCESS",
+      "product_name": "Vũ Yên (VinWonders) - Access Security",
+      "company_owner": "VinSmart Future",
+      "portfolio_scope": "Core VSF deployment",
+      "product_type": "Access security solution",
+      "smart_city_domains": [
+        "Security",
+        "Access Control"
+      ],
+      "target_scope_users": [
+        "VinWonders Vũ Yên",
+        "Bộ phận an ninh và vận hành cổng"
+      ],
+      "capabilities": [
+        "Cảnh báo trường hợp nối đuôi khi ra vào cổng",
+        "Cảnh báo xâm nhập trái phép khi ra vào cổng"
+      ],
+      "public_status_latest_evidence": "Thông tin danh mục nội bộ do người dùng cung cấp ngày 10/08/2026.",
+      "source_urls": [],
+      "known_unknowns": [
+        "Cần xác nhận kiến trúc thiết bị, phương thức định danh và workflow xử lý cảnh báo tại cổng."
+      ],
+      "portfolio_role": "CORE_VSF_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "SMART-PARKING",
+      "product_name": "Smart Parking",
+      "company_owner": "VinSmart Future",
+      "portfolio_scope": "Core VSF",
+      "product_type": "Smart parking management platform",
+      "smart_city_domains": [
+        "Parking",
+        "Access Control",
+        "Payments"
+      ],
+      "target_scope_users": [
+        "Người gửi xe",
+        "Bảo vệ",
+        "Ban quản lý",
+        "Kế toán"
+      ],
+      "capabilities": [
+        "PC App: hỗ trợ gửi xe tự động",
+        "SOS App: hỗ trợ bảo vệ theo dõi, mở barrier và thực hiện các tác vụ thủ công",
+        "CMS App: hỗ trợ ban quản lý đăng ký thuê bao khi đăng ký chỗ đỗ xe",
+        "V-Pay Gate: hỗ trợ kế toán kiểm tra doanh thu và xử lý các vấn đề liên quan đến tiền"
+      ],
+      "public_status_latest_evidence": "Thông tin danh mục nội bộ do người dùng cung cấp ngày 10/08/2026.",
+      "source_urls": [],
+      "known_unknowns": [
+        "Cần xác nhận ranh giới chức năng, luồng tích hợp và quyền truy cập giữa PC App, SOS App, CMS App và V-Pay Gate."
+      ],
+      "portfolio_role": "CORE_VSF_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "SMART-STADIUM",
+      "product_name": "Sân vận động thông minh",
+      "company_owner": "VinSmart Future",
+      "portfolio_scope": "Core VSF",
+      "product_type": "Smart stadium operations and safety solution",
+      "smart_city_domains": [
+        "Smart Venue",
+        "Public Safety",
+        "Environment",
+        "Energy",
+        "Emergency Response"
+      ],
+      "target_scope_users": [
+        "Đơn vị vận hành sân vận động",
+        "Lực lượng an ninh và điều phối giao thông",
+        "Đội ngũ y tế và phòng cháy chữa cháy"
+      ],
+      "capabilities": [
+        "Điều phối giao thông ngoài sân",
+        "Giám sát đám đông",
+        "Giám sát mức độ căng thẳng nhiệt",
+        "Giám sát chất lượng không khí và chỉ số WBGT",
+        "Phòng cháy chữa cháy",
+        "Giám sát năng lượng",
+        "Hỗ trợ y tế khẩn cấp",
+        "Trung tâm điều khiển VOC",
+        "Điều khiển sơ tán"
+      ],
+      "public_status_latest_evidence": "Thông tin danh mục nội bộ do người dùng cung cấp ngày 10/08/2026.",
+      "source_urls": [],
+      "known_unknowns": [
+        "Cần xác nhận phạm vi của VOC, kiến trúc tích hợp cảm biến và quy trình phối hợp ứng cứu khẩn cấp."
+      ],
+      "portfolio_role": "CORE_VSF_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VSO",
+      "product_name": "VSafeOne",
+      "company_owner": "VinSmart Future",
+      "portfolio_scope": "Core VSF",
+      "product_type": "Urban safety & operations solution",
+      "smart_city_domains": [
+        "Security",
+        "Access Control",
+        "Environment",
+        "Parking"
+      ],
+      "target_scope_users": [
+        "Khu đô thị"
+      ],
+      "capabilities": [
+        "Camera an ninh – phát hiện xâm nhập",
+        "Cổng ra vào",
+        "Thang máy",
+        "Đánh giá chất lượng không khí",
+        "Các bài toán về đỗ xe"
+      ],
+      "public_status_latest_evidence": "Internal product; public evidence not found during this research.",
+      "source_urls": [],
+      "known_unknowns": [
+        "Chưa có mô tả công khai về kiến trúc, thiết bị, workflow và phạm vi cụ thể của từng bài toán đỗ xe."
+      ],
+      "portfolio_role": "CORE_VSF_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "V-PET",
+      "product_name": "V-pet",
+      "company_owner": "VinSmart Future / Vinhomes",
+      "portfolio_scope": "Core VSF module",
+      "product_type": "Pet management module",
+      "smart_city_domains": [
+        "Resident Services",
+        "Public Space Safety"
+      ],
+      "target_scope_users": [
+        "Cư dân",
+        "Ban quản lý khu đô thị"
+      ],
+      "capabilities": [
+        "Đăng ký thú nuôi",
+        "Định danh thú nuôi",
+        "Phát hiện thú nuôi thả rông",
+        "Phát hiện thú nuôi không đeo rọ mõm",
+        "Phát hiện thú nuôi phóng uế",
+        "Phát hiện hành vi thú nuôi cắn người",
+        "Định vị thú nuôi bằng GPS"
+      ],
+      "public_status_latest_evidence": "Vinhomes Resident công bố bổ sung tính năng Quản lý thú cưng (VPet) trong bản cập nhật 21/07/2026.",
+      "source_urls": [
+        "https://play.google.com/store/apps/details?hl=vi&id=com.vinhomes.resident"
+      ],
+      "known_unknowns": [
+        "Nguồn công khai chỉ xác nhận VPet tồn tại.",
+        "Phương thức định danh cần xác nhận nội bộ.",
+        "Logic AI phát hiện vi phạm cần xác nhận nội bộ.",
+        "Thiết bị và cơ chế GPS cần xác nhận nội bộ."
+      ],
+      "portfolio_role": "CORE_VSF_MODULE",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "V-APP",
+      "product_name": "V-App",
+      "company_owner": "VinSmart Future",
+      "portfolio_scope": "Core VSF",
+      "product_type": "Super app / unified digital platform",
+      "smart_city_domains": [
+        "Citizen & Resident Digital Services"
+      ],
+      "target_scope_users": [
+        "Người dùng hệ sinh thái Vingroup",
+        "Cư dân Vinhomes"
+      ],
+      "capabilities": [
+        "Tích hợp dịch vụ hệ sinh thái",
+        "AI cá nhân hóa và gợi ý",
+        "Tin tức",
+        "Trợ lý AI",
+        "Thanh toán và ví",
+        "Dịch vụ số và mini app",
+        "Quản lý tiện ích trong hệ sinh thái"
+      ],
+      "public_status_latest_evidence": "Ứng dụng hoạt động công khai; Google Play ghi nhận cập nhật 17/06/2026.",
+      "source_urls": [
+        "https://play.google.com/store/apps/details?hl=vi&id=vn.vsf.app.prod",
+        "https://v-app.vn/"
+      ],
+      "known_unknowns": [
+        "V-App rộng hơn Smart City. Khi mapping O/T, chỉ dùng các module liên quan nhà ở, cư dân, mobility, energy và public services."
+      ],
+      "portfolio_role": "CORE_VSF_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VHR",
+      "product_name": "Vinhomes Resident / Vinhomes Residents MiniApp",
+      "company_owner": "Vinhomes / VinSmart Future",
+      "portfolio_scope": "Vingroup ecosystem",
+      "product_type": "Resident app / smart living platform",
+      "smart_city_domains": [
+        "Smart Living",
+        "Building Operations",
+        "Citizen Services"
+      ],
+      "target_scope_users": [
+        "Cư dân Vinhomes",
+        "Ban quản lý"
+      ],
+      "capabilities": [
+        "Đặt tiện ích công cộng",
+        "Thanh toán hóa đơn",
+        "Yêu cầu hỗ trợ dịch vụ tòa nhà",
+        "Phản ánh và góp ý",
+        "Thông tin PCCC, intercom và chỉ số môi trường",
+        "Nhận cuộc gọi intercom",
+        "Đăng ký khách và mở cửa",
+        "Phân tầng thang máy",
+        "Tra cứu dịch vụ nội khu"
+      ],
+      "public_status_latest_evidence": "Ứng dụng cập nhật 21/07/2026; mini app Vinhomes Residents hiện có trên V-App.",
+      "source_urls": [
+        "https://play.google.com/store/apps/details?hl=vi&id=com.vinhomes.resident",
+        "https://v-app.vn/en/mini/vhr.v-app.vn"
+      ],
+      "known_unknowns": [
+        "Cần xác định feature nào tiếp tục nằm ở app độc lập và feature nào được chuyển dần sang V-App."
+      ],
+      "portfolio_role": "VINGROUP_ECOSYSTEM_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "TP-OFFICE",
+      "product_name": "TechnoPark - Office App",
+      "company_owner": "Vingroup",
+      "portfolio_scope": "Vingroup ecosystem",
+      "product_type": "Smart building office app",
+      "smart_city_domains": [
+        "Smart Building",
+        "Access Control",
+        "Workplace Services"
+      ],
+      "target_scope_users": [
+        "Nhân viên",
+        "Quản lý doanh nghiệp",
+        "Khách tại TechnoPark"
+      ],
+      "capabilities": [
+        "Đăng ký khuôn mặt để vào tòa nhà",
+        "Đăng ký và quản lý phòng họp",
+        "Đăng ký khách",
+        "Tra cứu nhà hàng và quán ăn",
+        "Tiện ích tòa nhà thông minh"
+      ],
+      "public_status_latest_evidence": "Google Play ghi nhận cập nhật 29/07/2026.",
+      "source_urls": [
+        "https://play.google.com/store/apps/details?hl=en&id=com.vinsmart.officeapp"
+      ],
+      "known_unknowns": [
+        "Chưa có bằng chứng công khai về triển khai như một sản phẩm thương mại ngoài hệ sinh thái TechnoPark."
+      ],
+      "portfolio_role": "VINGROUP_ECOSYSTEM_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VSMART-HOME",
+      "product_name": "Vsmart Home",
+      "company_owner": "VinSmart / Vingroup",
+      "portfolio_scope": "Vingroup legacy ecosystem",
+      "product_type": "Smart home platform",
+      "smart_city_domains": [
+        "Smart Home",
+        "Connected Devices"
+      ],
+      "target_scope_users": [
+        "Căn hộ",
+        "Hộ gia đình"
+      ],
+      "capabilities": [
+        "Điều khiển thiết bị nhà thông minh qua điện thoại hoặc máy tính bảng",
+        "Kết nối ZigBee và Wi-Fi",
+        "Tiện ích và an ninh nhà ở",
+        "Máy chủ đặt tại data center của Vingroup tại Việt Nam"
+      ],
+      "public_status_latest_evidence": "Ứng dụng vẫn được niêm yết công khai; sản phẩm mang dấu ấn VinSmart giai đoạn trước.",
+      "source_urls": [
+        "https://apps.apple.com/vn/app/vsmart-home-vinsmart/id1480079793"
+      ],
+      "known_unknowns": [
+        "Cần human validation về trạng thái thương mại.",
+        "Cần xác nhận roadmap.",
+        "Cần xác nhận khả năng tích hợp hiện tại với VSF/V-App."
+      ],
+      "portfolio_role": "LEGACY_ECOSYSTEM_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "GUARDPRO",
+      "product_name": "GuardPro",
+      "company_owner": "VinAI",
+      "portfolio_scope": "Vingroup technology ecosystem",
+      "product_type": "AI video analytics platform",
+      "smart_city_domains": [
+        "Public Safety",
+        "Access Control",
+        "Parking",
+        "Building Safety"
+      ],
+      "target_scope_users": [
+        "Khu đô thị",
+        "Tòa nhà",
+        "Khu vực công cộng"
+      ],
+      "capabilities": [
+        "Nhận diện khuôn mặt",
+        "Phát hiện và theo dõi người, vật thể, hành động và phương tiện",
+        "Nhận diện biển số",
+        "Quản lý danh sách truy cập",
+        "Smart parking",
+        "Phát hiện đỗ xe không hợp lệ",
+        "Phát hiện xâm nhập",
+        "Phát hiện thú nuôi",
+        "Phát hiện vật quá khổ trong thang máy",
+        "Cảnh báo thời gian thực"
+      ],
+      "public_status_latest_evidence": "Trang sản phẩm hiện hoạt động; Vingroup công bố GuardPro được triển khai tại Vinhomes Smart City trong giải pháp Smart City.",
+      "source_urls": [
+        "https://www.vinai.io/guardpro/",
+        "https://vingroup.net/en/news/detail/2801/vinai-collaborates-with-qualcomm-to-launch-high-performance-low-power-ai-solution-for-smart-cities"
+      ],
+      "known_unknowns": [
+        "Cần xác định GuardPro là engine/technology supplier hay product component trong kiến trúc VSF hiện tại.",
+        "Không tự động kế thừa capability của GuardPro sang VSafeOne."
+      ],
+      "portfolio_role": "VINGROUP_ENABLING_TECHNOLOGY",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VISIONAI-CAMERA",
+      "product_name": "VisionAI Smart Camera System",
+      "company_owner": "VinBigData",
+      "portfolio_scope": "Vingroup technology ecosystem",
+      "product_type": "Smart camera system",
+      "smart_city_domains": [
+        "Public Safety",
+        "Urban Security"
+      ],
+      "target_scope_users": [
+        "Các đại đô thị Vinhomes"
+      ],
+      "capabilities": [
+        "Hệ thống camera thông minh phục vụ an ninh và an toàn",
+        "Triển khai tại Vinhomes Grand Park",
+        "Triển khai tại Vinhomes Ocean Park",
+        "Triển khai tại Vinhomes Smart City"
+      ],
+      "public_status_latest_evidence": "VinBigData công bố deployment tại ba đại đô thị Vinhomes.",
+      "source_urls": [
+        "https://vinbigdata.com/en/case-study-product/visionai"
+      ],
+      "known_unknowns": [
+        "Nguồn công khai hiện chỉ mô tả ở mức case study.",
+        "Cần xác nhận danh sách tính năng cụ thể.",
+        "Cần xác nhận quan hệ hiện tại với GuardPro và VSafeOne."
+      ],
+      "portfolio_role": "VINGROUP_ENABLING_TECHNOLOGY",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VINBUS",
+      "product_name": "VinBus Smart Mobility System",
+      "company_owner": "VinBus / Vingroup",
+      "portfolio_scope": "Vingroup ecosystem",
+      "product_type": "Electric public transport & fleet platform",
+      "smart_city_domains": [
+        "Smart Mobility",
+        "Green Transport"
+      ],
+      "target_scope_users": [
+        "Hành khách",
+        "Đơn vị vận hành giao thông công cộng"
+      ],
+      "capabilities": [
+        "Xe buýt điện",
+        "Hệ thống IoT quản lý đội xe và hành trình hằng ngày",
+        "Smart charging thời gian thực",
+        "AI camera giám sát hành vi lái xe",
+        "Cảnh báo mệt mỏi và mất tập trung",
+        "Smart Map tra cứu tuyến và điểm dừng"
+      ],
+      "public_status_latest_evidence": "Website VinBus hiện mô tả hệ thống IoT, smart charging, AI camera và Smart Map.",
+      "source_urls": [
+        "https://vinbus.vn/en"
+      ],
+      "known_unknowns": [
+        "Portfolio row gộp phương tiện, hệ thống vận hành và ứng dụng hành khách vì các thành phần được cung cấp như một hệ thống mobility."
+      ],
+      "portfolio_role": "VINGROUP_ECOSYSTEM_PRODUCT",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "BATTERY-CHG",
+      "product_name": "Battery & Charging Mini App",
+      "company_owner": "VinSmart Future / VinFast",
+      "portfolio_scope": "VSF platform module",
+      "product_type": "EV charging management mini app",
+      "smart_city_domains": [
+        "Smart Mobility",
+        "Urban Energy"
+      ],
+      "target_scope_users": [
+        "Chủ sở hữu ô tô điện VinFast",
+        "Chủ sở hữu xe máy điện VinFast"
+      ],
+      "capabilities": [
+        "Theo dõi phiên sạc theo thời gian thực",
+        "Thanh toán sạc",
+        "Thanh toán thuê pin",
+        "Quản lý phương tiện và tài khoản",
+        "Tìm trạm sạc"
+      ],
+      "public_status_latest_evidence": "Mini app hiện được công bố trên nền tảng V-App.",
+      "source_urls": [
+        "https://v-app.vn/en/mini/vinfast.v-app.vn"
+      ],
+      "known_unknowns": [
+        "Đây là module người dùng.",
+        "Hạ tầng trạm sạc và hệ thống back-office chưa được mô tả đầy đủ trong nguồn hiện tại."
+      ],
+      "portfolio_role": "CORE_VSF_MODULE",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": true,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VINCSS-FDO",
+      "product_name": "VinCSS IoT Security — FIDO Device Onboarding",
+      "company_owner": "VinCSS / Vingroup ecosystem",
+      "portfolio_scope": "Vingroup technology ecosystem",
+      "product_type": "IoT cybersecurity solution",
+      "smart_city_domains": [
+        "Cybersecurity",
+        "IoT Infrastructure"
+      ],
+      "target_scope_users": [
+        "Đơn vị triển khai số lượng lớn thiết bị IoT trong Smart City, tòa nhà, bệnh viện và nhà máy"
+      ],
+      "capabilities": [
+        "Tự động hóa triển khai thiết bị IoT theo chuẩn FDO",
+        "Tự động thiết lập và kết nối thiết bị IoT",
+        "Secure onboarding",
+        "Giảm can thiệp thủ công",
+        "Giảm rủi ro cấu hình khi triển khai quy mô lớn"
+      ],
+      "public_status_latest_evidence": "Trang giải pháp VinCSS hiện hoạt động và mô tả FDO cho triển khai IoT quy mô lớn.",
+      "source_urls": [
+        "https://vincss.net/solution/iot-fdo/"
+      ],
+      "known_unknowns": [
+        "Đây là enabling technology, không phải ứng dụng đô thị hướng người dùng cuối."
+      ],
+      "portfolio_role": "VINGROUP_ENABLING_TECHNOLOGY",
+      "active_for_news_mapping": true,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    },
+    {
+      "product_code": "VG-SMARTCITY-STACK",
+      "product_name": "Vingroup Comprehensive Smart City Solution Stack",
+      "company_owner": "Vingroup / VinSmart (public disclosure 2021)",
+      "portfolio_scope": "Historical umbrella portfolio",
+      "product_type": "Cross-domain Smart City solution",
+      "smart_city_domains": [
+        "Cross-domain"
+      ],
+      "target_scope_users": [
+        "Các đại đô thị Vinhomes"
+      ],
+      "capabilities": [
+        "Smart fire alarm",
+        "Smart video surveillance",
+        "Smart access control",
+        "Air-quality monitoring",
+        "Autonomous public buses",
+        "Smart traffic monitoring and management",
+        "Smart parking",
+        "Smart intercom",
+        "Smart City Hub",
+        "Smart Office App",
+        "Central Command Centre",
+        "Smart home",
+        "VinID Resident App",
+        "Building Operation App"
+      ],
+      "public_status_latest_evidence": "Được công bố trong Corporate Presentation tháng 04/2021; trạng thái đóng gói sản phẩm hiện tại cần xác minh.",
+      "source_urls": [
+        "https://ircdn.vingroup.net/storage/Uploads/0_Quan%20he%20co%20dong/0_Vingroup_2021/Apr/2021.03_Vingroup%20Corporate%20Presentation.pdf"
+      ],
+      "known_unknowns": [
+        "Chỉ dùng làm bằng chứng lịch sử về phạm vi portfolio.",
+        "Không tự động coi mọi component vẫn là sản phẩm độc lập.",
+        "Không tự động coi mọi component còn do cùng một đơn vị sở hữu."
+      ],
+      "portfolio_role": "HISTORICAL_REFERENCE",
+      "active_for_news_mapping": false,
+      "allowed_gap_baseline": false,
+      "human_validation_required": true
+    }
+  ]
+}

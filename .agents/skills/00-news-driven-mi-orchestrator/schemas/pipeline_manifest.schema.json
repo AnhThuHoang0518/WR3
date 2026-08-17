@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pipeline Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "run_id",
+    "synthetic",
+    "current_stage",
+    "pipeline_status",
+    "gates"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0.0-contract"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "current_stage": {
+      "enum": [
+        "00-news-driven-mi-orchestrator",
+        "01-market-news",
+        "02-competitor-news",
+        "03-technology-news",
+        "04-policy-news",
+        "05-news-relevance-hitl",
+        "06-signal-synthesis",
+        "07-opportunity-threat",
+        "08-opportunity-threat-hitl",
+        "09-product-mapping",
+        "10-product-gap",
+        "11-action-recommendation",
+        "12-product-action-hitl",
+        "13-mi-quality-control",
+        "COMPLETE"
+      ]
+    },
+    "pipeline_status": {
+      "enum": [
+        "PENDING",
+        "IN_PROGRESS",
+        "BLOCKED",
+        "COMPLETED",
+        "REJECTED"
+      ]
+    },
+    "gates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "news_relevance",
+        "opportunity_threat",
+        "product_action"
+      ],
+      "properties": {
+        "news_relevance": {
+          "enum": [
+            "PENDING",
+            "APPROVED",
+            "CHANGES_REQUIRED",
+            "REJECTED"
+          ]
+        },
+        "opportunity_threat": {
+          "enum": [
+            "PENDING",
+            "APPROVED",
+            "CHANGES_REQUIRED",
+            "REJECTED"
+          ]
+        },
+        "product_action": {
+          "enum": [
+            "PENDING",
+            "APPROVED",
+            "CHANGES_REQUIRED",
+            "REJECTED"
+          ]
+        }
+      }
+    }
+  }
+}

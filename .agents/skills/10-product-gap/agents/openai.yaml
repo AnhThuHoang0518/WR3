@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Gap"
+  short_description: "Validate evidence-backed VSF capability gaps"
+  default_prompt: "Use $product-gap to compare reviewed market requirements with the read-only VSF catalog and stop before Action Recommendation."

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Product Mapping Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "items"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "product_mapping"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "product_mapping_id",
+          "signal_id",
+          "related_ot_ids",
+          "market_problem",
+          "market_product_category",
+          "product_or_solution_type",
+          "required_capabilities",
+          "target_buyers",
+          "deployment_context",
+          "fit_rationale",
+          "evidence_or_validation_needed"
+        ],
+        "properties": {
+          "product_mapping_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "related_ot_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "market_problem": {
+            "type": "string",
+            "minLength": 1
+          },
+          "market_product_category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "product_or_solution_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "target_buyers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "deployment_context": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fit_rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "external_market_examples": {
+            "type": "array",
+            "description": "Optional; include only sourced examples and never treat them as VSF products.",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "evidence_or_validation_needed": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

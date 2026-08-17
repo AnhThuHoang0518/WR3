@@ -1,0 +1,7 @@
+interface:
+  display_name: "Create VSF MI Finding Slides"
+  short_description: "Build VSF MI findings with fill-in references"
+  default_prompt: "Use $create-vsf-mi-finding-slides to build the approved three-page Finding Board deck with blank real-world reference and verified-technology placeholders."
+  icon_small: "./assets/vsf-logo.png"
+  icon_large: "./assets/vsf-logo.png"
+  brand_color: "#E5002B"

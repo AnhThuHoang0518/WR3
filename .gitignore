@@ -1,0 +1,14 @@
+# Generated crawl data, review packages, logs, and presentation audits
+workspace/
+bbox-audit/
+
+# Local editor/runtime state and Python caches
+.codex-edit/
+.tmp/
+tmp/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Installed dependencies are reproducible from their manifests
+.agents/**/node_modules/

@@ -1,0 +1,14 @@
+{
+  "review_gate": "opportunity-threat-hitl",
+  "run_id": "SYN-RUN-001",
+  "overall_status": "PENDING",
+  "reviewed_ot_ids": [],
+  "approved_ot_ids": [],
+  "rejected_ot_ids": [],
+  "revision_ot_ids": [],
+  "reviewer": null,
+  "reviewed_at": null,
+  "reviewer_summary": null,
+  "synthetic": true
+}
+

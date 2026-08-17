@@ -1,0 +1,4 @@
+interface:
+  display_name: "MI Quality Control"
+  short_description: "Audit pipeline integrity and release readiness"
+  default_prompt: "Use $mi-quality-control to audit a Gate 3-reviewed market-intelligence run without modifying upstream artifacts."

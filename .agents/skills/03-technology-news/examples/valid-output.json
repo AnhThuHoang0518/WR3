@@ -1,0 +1,30 @@
+{
+  "artifact_type": "technology_news",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "items": [
+    {
+      "news_id": "SYN-NEWS-T-001",
+      "news_type": "TECHNOLOGY",
+      "title": "Synthetic technology news",
+      "source_name": "Synthetic source",
+      "source_url": "https://example.invalid/technology-news",
+      "published_at": "2026-01-01T00:00:00Z",
+      "collected_at": "2026-01-01T01:00:00Z",
+      "geography": [
+        "SYNTHETIC_GEOGRAPHY"
+      ],
+      "language": "en",
+      "summary": "Synthetic example for contract validation.",
+      "key_facts": [
+        "Synthetic fact placeholder; not a real-world claim."
+      ],
+      "entities": [
+        "SYNTHETIC_ENTITY"
+      ],
+      "relevance_rationale": "Synthetic relevance rationale for schema validation.",
+      "evidence_quality": "UNKNOWN",
+      "content_status": "METADATA_ONLY"
+    }
+  ]
+}

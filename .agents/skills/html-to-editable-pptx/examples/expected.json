@@ -1,0 +1,11 @@
+{
+  "01-basic-text.html": ["editable heading", "editable paragraph", "font/color/alignment"],
+  "02-cards.html": ["editable rounded cards", "editable card text", "shadow approximation"],
+  "03-grid.html": ["geometry measured from CSS Grid", "three editable panels"],
+  "04-flex.html": ["geometry measured from Flexbox", "badge and divider shapes"],
+  "05-images.html": ["contain image", "cover image crop", "no stretch"],
+  "06-svg.html": ["simple SVG primitives editable", "complex path retained as SVG image"],
+  "07-fonts.html": ["font availability reported", "weight/italic/letter spacing"],
+  "08-complex-layout.html": ["nested Grid/Flex geometry", "pseudo-elements", "small gradient raster fallback", "off-slide warning"],
+  "09-placeholders.html": ["blank fill-in text boxes retained", "placeholder names preserved in the Selection Pane", "no visible prompt text injected"]
+}

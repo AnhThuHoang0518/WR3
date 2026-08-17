@@ -1,0 +1,15 @@
+{
+  "review_gate": "product-action-hitl",
+  "run_id": "SYN-RUN-001",
+  "overall_status": "PENDING",
+  "reviewed_action_ids": [],
+  "approved_action_ids": [],
+  "rejected_action_ids": [],
+  "revision_action_ids": [],
+  "reviewer": null,
+  "reviewed_at": null,
+  "reviewer_summary": null,
+  "synthetic": true,
+  "deferred_action_ids": []
+}
+

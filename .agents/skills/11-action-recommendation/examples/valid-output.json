@@ -1,0 +1,33 @@
+{
+  "artifact_type": "actions",
+  "run_id": "SYN-RUN-001",
+  "synthetic": true,
+  "items": [
+    {
+      "action_id": "SYN-ACT-001",
+      "source_signal_id": "SYN-SIG-001",
+      "related_ot_ids": [
+        "SYN-OT-001"
+      ],
+      "product_mapping_id": "SYN-PM-001",
+      "gap_ids": [
+        "SYN-GAP-001"
+      ],
+      "target_product_or_category": "Synthetic market category",
+      "recommended_response": "VALIDATE",
+      "proposed_action": "Validate the synthetic capability requirement.",
+      "rationale": "Synthetic rationale linked to the gap.",
+      "priority": "MEDIUM",
+      "build_buy_partner": "UNDECIDED",
+      "pilot_or_productize": "UNDECIDED",
+      "validation_required": [
+        "Human validation"
+      ],
+      "next_step": "Collect the evidence needed to validate the synthetic requirement and record the result.",
+      "expected_outcome": "A validated synthetic decision input.",
+      "decision_risks": [
+        "Synthetic uncertainty"
+      ]
+    }
+  ]
+}

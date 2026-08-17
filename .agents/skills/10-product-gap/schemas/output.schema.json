@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Product Gap Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_type",
+    "run_id",
+    "synthetic",
+    "items"
+  ],
+  "properties": {
+    "artifact_type": {
+      "const": "product_gap"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gap_id",
+          "product_mapping_id",
+          "signal_id",
+          "market_product_category",
+          "required_capabilities",
+          "matched_vsf_product",
+          "current_vsf_capabilities",
+          "capability_status",
+          "missing_capabilities",
+          "gap_type",
+          "gap_severity",
+          "comparison_rationale",
+          "portfolio_evidence_refs",
+          "validation_needed"
+        ],
+        "properties": {
+          "gap_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "product_mapping_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signal_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "market_product_category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required_capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "matched_vsf_product": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "current_vsf_capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "capability_status": {
+            "enum": [
+              "FULL_MATCH",
+              "PARTIAL_MATCH",
+              "NO_MATCH",
+              "UNKNOWN"
+            ]
+          },
+          "missing_capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "gap_type": {
+            "enum": [
+              "FEATURE",
+              "TECHNOLOGY",
+              "DATA",
+              "INTEGRATION",
+              "HARDWARE",
+              "OPERATION",
+              "PARTNER_ECOSYSTEM",
+              "COMMERCIAL_MODEL",
+              "COMPLIANCE",
+              "UNKNOWN"
+            ]
+          },
+          "gap_severity": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH",
+              "CRITICAL",
+              "UNKNOWN"
+            ]
+          },
+          "comparison_rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "portfolio_evidence_refs": {
+            "type": "array",
+            "description": "Trace capability claims to products.json without requiring downstream stages to read the catalog.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "product_code",
+                "catalog_fields"
+              ],
+              "properties": {
+                "product_code": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "catalog_fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true,
+                  "minItems": 1
+                }
+              }
+            },
+            "uniqueItems": true
+          },
+          "validation_needed": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "capability_status": {
+                  "const": "FULL_MATCH"
+                }
+              },
+              "required": [
+                "capability_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "matched_vsf_product": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "current_vsf_capabilities": {
+                  "minItems": 1
+                },
+                "missing_capabilities": {
+                  "maxItems": 0
+                },
+                "portfolio_evidence_refs": {
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "capability_status": {
+                  "const": "PARTIAL_MATCH"
+                }
+              },
+              "required": [
+                "capability_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "matched_vsf_product": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "current_vsf_capabilities": {
+                  "minItems": 1
+                },
+                "missing_capabilities": {
+                  "minItems": 1
+                },
+                "portfolio_evidence_refs": {
+                  "minItems": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "capability_status": {
+                  "const": "NO_MATCH"
+                }
+              },
+              "required": [
+                "capability_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "matched_vsf_product": {
+                  "type": "null"
+                },
+                "current_vsf_capabilities": {
+                  "maxItems": 0
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "capability_status": {
+                  "const": "UNKNOWN"
+                }
+              },
+              "required": [
+                "capability_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "current_vsf_capabilities": {
+                  "maxItems": 0
+                },
+                "validation_needed": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

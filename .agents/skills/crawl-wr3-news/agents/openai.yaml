@@ -1,0 +1,4 @@
+interface:
+  display_name: "Crawl WR3 News"
+  short_description: "Crawl Smart City news by user experience"
+  default_prompt: "Use $crawl-wr3-news to crawl broad Smart City news with a product-experience overlay and stop at News Relevance HITL."

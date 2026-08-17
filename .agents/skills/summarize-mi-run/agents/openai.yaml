@@ -1,0 +1,4 @@
+interface:
+  display_name: "Summarize MI Run"
+  short_description: "Create an approved MI report with News-to-Signal links"
+  default_prompt: "Use $summarize-mi-run to create the approved-only Markdown report for the latest WR3 run with Executive Summary first, Signal-centric Findings, an explicit Liên hệ SIGNAL sentence for every News item, Approach last, and one compact source citation under every News summary."

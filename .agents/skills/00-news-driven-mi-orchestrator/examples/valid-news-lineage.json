@@ -1,0 +1,21 @@
+{
+  "run_id": "20260809-000000-synthetic",
+  "synthetic": true,
+  "mapping_count": 2,
+  "mappings": [
+    {
+      "raw_news_id": "RAW-SYN-001",
+      "news_id": "NEWS-MARKET-001",
+      "news_type": "MARKET",
+      "artifact_path": "workspace/runs/20260809-000000-synthetic/artifacts/market_news.json",
+      "input_position": 0
+    },
+    {
+      "raw_news_id": "RAW-SYN-006",
+      "news_id": "NEWS-COMPETITOR-001",
+      "news_type": "COMPETITOR",
+      "artifact_path": "workspace/runs/20260809-000000-synthetic/artifacts/competitor_news.json",
+      "input_position": 5
+    }
+  ]
+}
